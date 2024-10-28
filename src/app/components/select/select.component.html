@@ -1,0 +1,41 @@
+<!-- <label for="cars">Selecione um carro: </label>
+<select
+  name="cars" id="cars"
+  ngModel
+  #meuSelectFormControl = "ngModel"
+  required
+>
+  <option value="" selected></option>
+  <option value="Volvo" selected>Volvo</option>
+  <option value="Saab" selected>Saab</option>
+  <option value="Fiat" selected>Fiat</option>
+  <option value="Audi" selected>Audi</option>
+</select> -->
+
+<!-- <label for="nacionalidade">Selecione uma nacionalidade: </label>
+<select name="nacionalidade" id="nacionalidade" ngModel #meuSelectFormControl="ngModel" required>
+  <option value="" selected></option>
+  <option
+    *ngFor="let nationality of nationalities"
+    [value]="nationality.id"
+  >
+  {{nationality.description}}
+  </option>
+</select> -->
+
+<label for="nacionalidade">Selecione uma nacionalidade: </label>
+<select name="nacionalidade" id="nacionalidade" [(ngModel)]="nationalitySelected" #meuSelectFormControl="ngModel" required>
+  <option value="" selected></option>
+  <option *ngFor="let nationality of nationalities" [value]="nationality.id">
+    {{nationality.description}}
+  </option>
+</select>
+<p>Nacionalidade selecionada: {{nationalitySelected}}</p>
+
+<br>
+
+<h3>Estado do select</h3>
+<P>Valido: {{meuSelectFormControl.valid}}</P>
+<P>Tocado: {{meuSelectFormControl.touched}}</P>
+<P>Sujo: {{meuSelectFormControl.dirty}}</P>
+

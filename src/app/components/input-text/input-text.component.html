@@ -1,0 +1,15 @@
+<input type="text" #meuInputFormControl="ngModel" ngModel required minlength="5"
+  [ngClass]="{
+    'valid': meuInputFormControl.valid && meuInputFormControl.touched,
+    'invalid': meuInputFormControl.invalid && meuInputFormControl.touched
+  }"
+>
+
+<input type="text" #meuInputFormControl="ngModel" ngModel required minlength="5"
+>
+
+<ng-container *ngIf="meuInputFormControl.invalid && meuInputFormControl.touched ">
+  <div *ngIf="meuInputFormControl.hasError('required')"> o campo nome é obrigatorio</div>
+  <div *ngIf="meuInputFormControl.hasError('minlength')"> O campo nome deve ter mais de 5 caracteres</div>
+</ng-container>
+

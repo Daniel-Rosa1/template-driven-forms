@@ -1,0 +1,20 @@
+<!-- <textarea
+  ngModel
+  #meuTextareaFormControl = "ngModel"
+  minlength="5"
+  required
+></textarea> -->
+
+<!-- <textarea [(ngModel)]="text" #meuTextareaFormControl="ngModel" minlength="5" required></textarea> -->
+<textarea [ngModel]="text" (ngModelChange)="onChange($event)" #meuTextareaFormControl="ngModel" minlength="5"
+  required></textarea>
+
+<br><br>
+
+<p>valido: {{meuTextareaFormControl.valid}}</p>
+<p>tocado: {{meuTextareaFormControl.touched}}</p>
+<p>sujo: {{meuTextareaFormControl.dirty}}</p>
+
+<br>
+
+<button (click)="showText()" [disabled]="meuTextareaFormControl.invalid">Mostrat texto</button>
